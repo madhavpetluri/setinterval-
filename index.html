@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>count down</title>
+</head>
+<body>
+    <p>Check the output in the console</p>
+    <script>
+        function Countdown(seconds) {
+            let remainingTime = seconds;
+
+            let intervalId = setInterval(() => {
+                if (remainingTime > 0) {
+                    console.log(`Time left: ${remainingTime} seconds`);
+                    remainingTime--;
+                } else {
+                    clearInterval(intervalId);
+                    console.log("Countdown complete!");
+                
+                    setTimeout(() => {
+                        console.log("Thank you for waiting!");
+                    }, 2000);
+                }
+            }, 1000);
+        }
+
+        Countdown(5);
+    </script>
+</body>
+</html>
